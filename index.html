@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bybit Style Cards + Footer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ffffff;
+            color: white;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+            background: #fff;
+            border-bottom: 1px solid #ddd;
+        }
+        .header img {
+            height: 32px;
+        }
+
+        .container {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+            padding: 50px 20px;
+        }
+
+        .card {
+            position: relative;
+            width: 90%;
+            max-width: 400px;
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(253, 165, 1, 0.3);
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            text-align: left;
+            color: black;
+        }
+
+        .card h3 {
+            font-size: 18px;
+            color: #f9b62d;
+            margin: 0;
+        }
+
+        .details {
+            margin: 10px 0;
+            font-size: 14px;
+            color: #000000;
+        }
+
+        .invite-btn {
+            width: 95%;
+            background: #f9b62d;
+            color: black;
+            padding: 10px;
+            text-align: center;
+            font-weight: bold;
+            border-radius: 5px;
+            text-decoration: none;
+            margin-top: 15px;
+            display: block;
+        }
+
+        /* Footer Styling */
+        .footer {
+            width: 100%;
+            background-color: #0a0a0a;
+            padding: 40px 0px;
+            text-align: center;
+            position: relative;
+            margin-top: auto;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .footer-logo img {
+            width: 40px;
+        }
+
+        .footer-logo span {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .footer-text {
+            font-size: 16px;
+            color: #aaa;
+            margin-bottom: 20px;
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .social-icons a {
+            color: white;
+            font-size: 20px;
+            transition: 0.3s;
+        }
+
+        .social-icons a:hover {
+            color: #f9b62d;
+        }
+
+        .copyright {
+            font-size: 14px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <img src="https://cdn.freelogovectors.net/svg08/tether_logo-freelogovectors.net_.svg" alt="Tether Logo">
+    </div>
+
+    <div class="container" id="packages"></div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-logo">
+            <img src="https://cryptologos.cc/logos/tether-usdt-logo.png" alt="Tether Logo">
+            <span>tether</span>
+        </div>
+        
+        <p class="footer-text">Driving the Future of Money</p>
+        
+        <div class="social-icons">
+            <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="#"><i class="fa-brands fa-youtube"></i></a>
+            <a href="#"><i class="fa-brands fa-telegram"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="#"><i class="fa-brands fa-facebook"></i></a>
+            <a href="#"><i class="fa-brands fa-reddit"></i></a>
+        </div>
+        
+        <p class="copyright">Copyright © 2013 - 2025 Tether Operations, S.A. de C.V. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Example data with title and button text
+        const packageData = [
+            { earnings: "Discount available for only 15 people left!", title: "Get 70 USDT for only 70 USDT", button: "Get Now" },
+            { title: "Get 280 USDT for only 280 USDT", earnings: "Discount available for only 15 people left!", button: "Get Now" },
+            { title: "Get 500 USDT for only 500 USDT", earnings: "Discount available for only 15 people left!", button: "Get Now" },
+            { title: "Get 1000 USDT for only 1000 USDT", earnings: "Discount available for only 15 people left!", button: "Get Now" }
+        ];
+
+        const container = document.getElementById("packages");
+        packageData.forEach(item => {
+            const card = document.createElement("div");
+            card.classList.add("card");
+
+            const title = document.createElement("h3");
+            title.textContent = item.title;
+
+            const details = document.createElement("div");
+            details.classList.add("details");
+            details.innerHTML = `<div><span>${item.earnings}</span></div>`;
+
+            // Create the button dynamically
+            const button = document.createElement("a");
+            const amount = item.title.split(' ')[1]; // Get the amount dynamically from the title
+            button.href = `payment.html?amount=${amount}`;  // Pass the amount to the payment page
+            button.classList.add("invite-btn");
+            button.textContent = item.button;
+
+            card.appendChild(title);
+            card.appendChild(details);
+            card.appendChild(button);
+            container.appendChild(card);
+        });
+    </script>
+</body>
+</html>
