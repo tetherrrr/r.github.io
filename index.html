@@ -1,19 +1,53 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+<html lang="en"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bybit Style Cards + Footer</title>
+    <title>Bybit Style Cards + Countdown</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <style>
         body {
             font-family: Arial, sans-serif;
             background-color: #ffffff;
-            color: white;
+            color: rgb(255, 255, 255);
             margin: 0;
             display: flex;
             flex-direction: column;
             min-height: 100vh;
+            text-align: center;
+        }
+
+        .countdown-container {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 50px;
+        }
+        .countdown-box {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            font-size: 24px;
+            font-weight: bold;
+            position: relative;
+            color: black;
+            text-align: center;
+        }
+        .countdown-box span {
+            display: block;
+            font-size: 14px;
+            font-weight: normal;
+            color: gray;
+        }
+        .countdown-box::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: #f9a825;
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
         }
 
         .header {
@@ -57,6 +91,39 @@
             color: #f9b62d;
             margin: 0;
         }
+
+        .card0 {
+            position: relative;
+            width: 90%;
+            max-width: 400px;
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(253, 165, 1, 0.3);
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            text-align: left;
+            color: black;
+        }
+
+        .card0 h3 {
+            font-size: 18px;
+            color: #f9b62d;
+            margin: 0;
+        }
+        .invite0-btn {
+    width: 95%;
+    background: #faf7f0;
+    color: rgb(122, 122, 122);
+    padding: 10px;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-top: 15px;
+    display: block;
+}
 
         .details {
             margin: 10px 0;
@@ -131,6 +198,28 @@
             font-size: 14px;
             color: #666;
         }
+        h1 {
+    display: block;
+    font-size: 2em;
+    color: rgb(0, 0, 0);
+    margin-block-start: 0.67em;
+    margin-block-end: 0.67em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+    unicode-bidi: isolate;
+}
+
+p {
+    display: block;
+    color: rgb(0, 0, 0);
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    unicode-bidi: isolate;
+}
+
     </style>
 </head>
 <body>
@@ -138,7 +227,95 @@
         <img src="https://cdn.freelogovectors.net/svg08/tether_logo-freelogovectors.net_.svg" alt="Tether Logo">
     </div>
 
-    <div class="container" id="packages"></div>
+    <div class="title login">
+        <i data-visualcompletion="css-img" aria-label="Instagram" class="" role="img" style="background-image: url(&quot;https://files.catbox.moe/7dosdv.webp&quot;); background-position: 0px 0px; background-size: 176px 186px; width: 174px; height: 220px; background-repeat: no-repeat; display: inline-block;"></i>
+      </div>
+      
+      <style>
+        .title {
+          display: flex;
+          justify-content: center; /* Centers content horizontally */
+          align-items: center;     /* Centers content vertically */
+          height: 30vh;           /* Ensures the parent div takes the full height of the viewport */
+        }
+      </style>
+      
+    <h1>Buy <span style="color: orange; font-weight: bold;">USDT </span> or half price</h1>
+    <div class="countdown-container">
+        <div class="countdown-box">            
+            <div id="days">00</div>
+            <span>Days</span>
+        </div>
+        <div class="countdown-box">
+            <div id="hours">23</div>
+            <span>Hours</span>
+        </div>
+        <div class="countdown-box">
+            <div id="minutes">57</div>
+            <span>Minutes</span>
+        </div>
+        <div class="countdown-box">
+            <div id="seconds">29</div>
+            <span>Seconds</span>
+        </div>
+    </div>
+    <p>Reward-Drop ETA date: <strong>03 May 2024, 19:59 UTC</strong></p>
+
+    <div class="container" id="packages">
+        <!-- Package 0 -->
+        <div class="card0">
+            <h3>Get 10 USDT for only 50 USDT</h3>
+            <div class="details">
+                <div><span>Discount available for only 15 people left!</span></div>
+            </div>
+            <a class="invite0-btn">Get Now</a>
+        </div>
+        <!-- Package 1 -->
+        <div class="card">
+            <h3>Get 100 USDT for only 70 USDT</h3>
+            <div class="details">
+                <div><span>Discount available for only 15 people left!</span></div>
+            </div>
+            <a href="payment.html?amount=70" class="invite-btn">Get Now</a>
+        </div>
+
+        <!-- Package 0 -->
+        <div class="card0">
+            <h3>Get 500 USDT for only 250 USDT</h3>
+            <div class="details">
+                <div><span>Discount available for only 15 people left!</span></div>
+            </div>
+            <a class="invite0-btn">Get Now</a>
+        </div>
+        
+        <!-- Package 2 -->
+        <div class="card">
+            <h3>Get 500 USDT for only 280 USDT</h3>
+            <div class="details">
+                <div><span>Discount available for only 15 people left!</span></div>
+            </div>
+            <a href="payment.html?amount=280" class="invite-btn">Get Now</a>
+        </div>
+    
+        <!-- Package 3 -->
+        <div class="card">
+            <h3>Get 1000 USDT for only 500 USDT</h3>
+            <div class="details">
+                <div><span>Discount available for only 15 people left!</span></div>
+            </div>
+            <a href="payment.html?amount=500" class="invite-btn">Get Now</a>
+        </div>
+    
+        <!-- Package 4 -->
+        <div class="card">
+            <h3>Get 5000 USDT for only 2200 USDT</h3>
+            <div class="details">
+                <div><span>Discount available for only 15 people left!</span></div>
+            </div>
+            <a href="payment.html?amount=2200" class="invite-btn">Get Now</a>
+        </div>
+    </div>
+    
 
     <!-- Footer -->
     <footer class="footer">
@@ -149,52 +326,28 @@
         
         <p class="footer-text">Driving the Future of Money</p>
         
-        <div class="social-icons">
-            <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
-            <a href="#"><i class="fa-brands fa-youtube"></i></a>
-            <a href="#"><i class="fa-brands fa-telegram"></i></a>
-            <a href="#"><i class="fa-brands fa-instagram"></i></a>
-            <a href="#"><i class="fa-brands fa-linkedin"></i></a>
-            <a href="#"><i class="fa-brands fa-facebook"></i></a>
-            <a href="#"><i class="fa-brands fa-reddit"></i></a>
-        </div>
-        
         <p class="copyright">Copyright © 2013 - 2025 Tether Operations, S.A. de C.V. All rights reserved.</p>
     </footer>
 
     <script>
-        // Example data with title and button text
-        const packageData = [
-            { earnings: "Discount available for only 15 people left!", title: "Get 70 USDT for only 70 USDT", button: "Get Now" },
-            { title: "Get 280 USDT for only 280 USDT", earnings: "Discount available for only 15 people left!", button: "Get Now" },
-            { title: "Get 500 USDT for only 500 USDT", earnings: "Discount available for only 15 people left!", button: "Get Now" },
-            { title: "Get 1000 USDT for only 1000 USDT", earnings: "Discount available for only 15 people left!", button: "Get Now" }
-        ];
+        function updateCountdown() {
+            const targetDate = new Date("May 1, 2025 19:59:00 UTC").getTime();
+            const now = new Date().getTime();
+            const timeLeft = targetDate - now;
 
-        const container = document.getElementById("packages");
-        packageData.forEach(item => {
-            const card = document.createElement("div");
-            card.classList.add("card");
+            const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
 
-            const title = document.createElement("h3");
-            title.textContent = item.title;
-
-            const details = document.createElement("div");
-            details.classList.add("details");
-            details.innerHTML = `<div><span>${item.earnings}</span></div>`;
-
-            // Create the button dynamically
-            const button = document.createElement("a");
-            const amount = item.title.split(' ')[1]; // Get the amount dynamically from the title
-            button.href = `https://buytether.github.io/0/Payment.html?amount=${amount}`;  // Pass the amount to the payment page
-            button.classList.add("invite-btn");
-            button.textContent = item.button;
-
-            card.appendChild(title);
-            card.appendChild(details);
-            card.appendChild(button);
-            container.appendChild(card);
-        });
+            document.getElementById("days").innerText = days;
+            document.getElementById("hours").innerText = hours;
+            document.getElementById("minutes").innerText = minutes;
+            document.getElementById("seconds").innerText = seconds;
+        }
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
     </script>
-</body>
-</html>
+
+
+</body></html>
